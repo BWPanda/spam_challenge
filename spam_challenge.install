@@ -453,4 +453,67 @@ function spam_challenge_install() {
   config_set('system.core', 'preprocess_css', '1');
   config_set('system.core', 'preprocess_js', '1');
   config_set('system.core', 'cache', '1');
+
+  // Create an Admin user account.
+  $admin = entity_create('user', array(
+    'name' => 'admin',
+    'mail' => 'admin@example.com',
+    'pass' => 'Ct4-R8Gv9G$r3~E+p1v*',
+    'roles' => array('administrator'),
+    'status' => 1,
+  ));
+  $admin->save();
+
+  // Create an Editor user account.
+  $editor = entity_create('user', array(
+    'name' => 'bjackson57',
+    'mail' => 'bob57@example.com',
+    'pass' => 'qwerty',
+    'roles' => array('editor'),
+    'status' => 1,
+  ));
+  $editor->save();
+
+  // Create spam user accounts.
+  $spammers = array(
+    array(
+      'name' => 'fast.loans',
+      'mail' => 'loans@example.com',
+      'pass' => '7;XvF.74b2JRgP2r`q&&',
+      'status' => 1,
+    ),
+    array(
+      'name' => 'globalSEO',
+      'mail' => 'seo@example.com',
+      'pass' => '!9B&i2Y:dhEzb2"6mD8Y',
+      'status' => 1,
+    ),
+    array(
+      'name' => 'russianBrides',
+      'mail' => 'brides@example.com',
+      'pass' => '57yCjp9,tr-`@!N4TVB5',
+      'status' => 1,
+    ),
+    array(
+      'name' => 'joeBlogger',
+      'mail' => 'joe@example.com',
+      'pass' => 'kpkcrwej',
+      'status' => 1,
+    ),
+    array(
+      'name' => 'WorkFromHome',
+      'mail' => 'freelancer@example.com',
+      'pass' => 'R9k6_Ntyv+2M"MqB&36-',
+      'status' => 1,
+    ),
+    array(
+      'name' => 'dTrump',
+      'mail' => 'donald@example.com',
+      'pass' => '!62kyaTq5$@N&3YW#8Zs',
+      'status' => 0,
+    ),
+  );
+  foreach ($spammers as $spammer) {
+    entity_create('user', $spammer)->save();
+  }
 }
