@@ -466,7 +466,7 @@ function spam_challenge_install() {
 
   // Create an Editor user account.
   $editor = entity_create('user', array(
-    'name' => 'bjackson57',
+    'name' => 'bjackson',
     'mail' => 'bob57@example.com',
     'pass' => 'qwerty',
     'roles' => array('editor'),
@@ -477,33 +477,33 @@ function spam_challenge_install() {
   // Create spam user accounts.
   $spammers = array(
     array(
-      'name' => 'fast.loans',
-      'mail' => 'loans@example.com',
+      'name' => 'j.smith',
+      'mail' => 'john@example.com',
       'pass' => '7;XvF.74b2JRgP2r`q&&',
       'status' => 1,
     ),
     array(
-      'name' => 'globalSEO',
-      'mail' => 'seo@example.com',
+      'name' => 'amy',
+      'mail' => 'amy@example.com',
       'pass' => '!9B&i2Y:dhEzb2"6mD8Y',
       'status' => 1,
     ),
     array(
-      'name' => 'russianBrides',
-      'mail' => 'brides@example.com',
+      'name' => 'bill',
+      'mail' => 'bill@example.com',
       'pass' => '57yCjp9,tr-`@!N4TVB5',
       'status' => 1,
     ),
     array(
-      'name' => 'joeBlogger',
-      'mail' => 'joe@example.com',
-      'pass' => 'kpkcrwej',
+      'name' => 'janetB',
+      'mail' => 'janet@example.com',
+      'pass' => 'R9k6_Ntyv+2M"MqB&36-',
       'status' => 1,
     ),
     array(
-      'name' => 'WorkFromHome',
-      'mail' => 'freelancer@example.com',
-      'pass' => 'R9k6_Ntyv+2M"MqB&36-',
+      'name' => 'markus',
+      'mail' => 'markus@example.com',
+      'pass' => 'kpkcrwel',
       'status' => 1,
     ),
     array(
@@ -515,5 +515,271 @@ function spam_challenge_install() {
   );
   foreach ($spammers as $spammer) {
     entity_create('user', $spammer)->save();
+  }
+
+  // Create spam content.
+  $spams = array(
+    array(
+      'type' => 'post',
+      'title' => st('Get FIRST Page Search Engine Rankings - Guaranteed!!'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>Do you want to see your website on Top 10 position of Google?</p>
+              <p>Do you want more targeted visitors on your website?</p>
+              <p>We would like to inform you that we also provide Digital Marketing, Web Design, Mobile Apps and Web Development services. We are 'One store of all web solutions'.</p>
+              <p>Please contact us a suitable time to call you and discuss further about the proposal.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('j.smith')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('Issues with website'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>I deal with visual impairment and I am having issues navigating and reading content on your site. It is also not compatible with screenreader at all. I am disappointed your website is not compliant with disability discrimination act and other laws.</p>
+              <p>I can share more details about the problems I am having. Do you have a liason for people with disability or communication/web team who can help further? Can you please provide the email address of the person who can help me with this.</p>
+              <p>I appreciate any help you can provide.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('amy')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('Local Organic Google Business'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>I was just going through your website and would like to share some observations pertaining to it. Though your website is great and has all the information that prospective customers of your niche will search for, it has a lot of scope for getting optimized in line with Search Engine Guidelines. I’m not just saying this because I have to but can back it with facts and relevant information.</p>
+              <p>We have conducted a meticulous SEO audit of your website and found that it can give you more return than it might be giving you at present. <strong>We would be happy to share a free of cost and no obligations audit and keywords recommendation report so that you can have a clear picture of what can be done to optimize your website further.</strong</p>
+              <p>Your website needs immediate improvement for some major issues with your website.</p>
+              <p>-Low online presence for many competitive keyword phrases
+              <br>-Unorganized social media accounts
+              <br>-Not compatible with all mobile devices
+              <br>-Many bad back links to your website</p>
+              <p>Let me know if you are interested, I will send you a free of cost and no obligations audit and keywords recommendation report for your website?</p>
+              <p>We look forward to a positive response.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('bill')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('Traditional, Unique and Personalized Anniversaries Gifts'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>The most important date on the calendar, from the moment you get into a relationship, is your anniversary! As older and experienced couples would have you know, this day comes with a lot of added pressure to it- the pressure to get the right gift, to be able to showcase your feelings well enough and to make every anniversary better than the previous one.</p>
+              <p>Feeling the stress of it already?</p>
+              <p>Don't stress we've got you covered for a decade or so! Read On to know what the modern day 'traditional' anniversary gifts are, in accordance to the year you're in...</p>
+              <p>1st Anniversary- clocks
+              <br>Our interpretation- get gorgeous couple's watches for yourselves! Now we do know that 'watches' technically are the gift for one's 15th anniversary, but who said that you can only have one watch?
+              <br>To personalize them you can get them etched with your anniversary date</p>
+              <p>2nd Anniversary- China
+              <br>Our Interpretation- A trip to the great wall of China!
+              <br>Oh come on! Ladies shop for cutlery and china, all year round... their anniversary's should be something special, ergo a vacation to the great wonder of the world, it is. And if tradition, does weigh heavy on you; you can always get yourselves a porcelain plate as a souvenir from China.
+              <br>Click a billion photographs and create an album of blissful memorabilia.</p>
+              <p>3rd Anniversary- Crystal
+              <br>This really doesn't require any other interpretations! Women love crystals... to wear and to decorate their homes with. As for the men... sorry boys, the smile on your lady's face should be rewarding enough for this anniversary!
+              <br>If you do go in for crystal champagne flutes or a crystal pendant , you could get it etched as well with your initials or your anniversary date; but a word of caution- crystal is rather delicate and if you feel that the etching might damage your gift, avoid the personalization and get the better half a gorgeous card instead.</p>
+              <p>4th Anniversary- Electrical Appliances
+              <br>See boys... You have your day (well in this case- year) too.
+              <br>Our Interpretation- get that TV your man has always wanted. Or better yet, upgrade your cars! If one of your couple's activity includes cooking together, then go the traditional route and get a new appliance for your kitchen.</p>
+              <p>5th Anniversary- Silverware
+              <br>Our interpretation- Jewelry. Because there really isn't any other interpretation, is there? We mean, what is one to do with a silver candelabra anyway? Instead- get the lady a pretty bracelet, and ladies, you'll can get your men, smart cufflinks or a lapel pin made of silver.
+              <br>Silver is the easiest to personalize, if you are getting custom bracelets and cufflinks made, you could get the same pattern etched on the two!</p>
+              <p>6th Anniversary- Wood
+              <br>Our recommendation would be to go traditional, and get some furniture made of wood! It could be the side tables you'll always wanted or you could redecorate that room you've been meaning to since the past few months. We hate to play the Devil's advocate, but ladies, you could get a shoe closet made for all those stunning shoes of yours (and a few of his as well).</p>
+              <p>7th Anniversary- Pens/Pencil sets
+              <br>Every hard working, power couple would love this one! Get yourselves a matching pen set- our personal favorite is the his and her star walker set by Mont Blanc. Alternatively you'll could get each other a set of pens with your initials engraved on them.</p>
+              <p>8th Anniversary- Lace and Linen
+              <br>Our recommendation- new wardrobes for the happy couple!
+              <br>We know! We know! Linen here; means new duvets and towels... but we bet you already have those... but no one can ever have enough clothes, right! And since linen is utterly in vogue, we suggest a little wardrobe make over.</p>
+              <p>9th Anniversary- Leather
+              <br>Our interpretation- a new handbag for the lady and a briefcase for her man.
+              <br>Leather can be bought in various forms apart from office bags- like watches, jackets, or shoes; so you can pretty much pick which leather element you most want and get that for each other</p>
+              <p>10th Anniversary –Diamond Jewelry
+              <br>Now here's a language every lady speaks! JEWELRY!! Really, any form of diamonds (the real deal that is) is always welcome. As for the men, the lady by your side, is your jewelry.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('janetB')->uid,
+      'status' => 1,
+      'promote' => 0,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('How to Whiten Facial and Body Skin Quickly Traditionally Naturally'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>It turns out how to whiten facial skin and body very easily once you can use traditional natural herbal ingredients that have proven to be effective for generations, can whiten facial skin and body easily even without causing side effects that can endanger the health of your body skin.</p>
+              <p>Whiten skin with orange
+              <br>Oranges are a natural ingredient that is very useful for skin beauty and health, oranges are rich in vitamin C which can nourish the skin naturally, besides oranges also have whitening properties that can help whiten your body's skin quickly.
+              <br>Mix two tablespoons of orange juice with one tablespoon of fine turmeric, stir until evenly distributed then apply to all areas of your skin and neck before going to sleep then after 20-30 minutes wash your face and neck using clean water, you can also apply this method for body skin, hands and feet.
+              <br>The second way: finely grind the dried orange peel until it becomes powder, then mix one tablespoon of the finely ground orange peel powder with one tablespoon of yogurt to make a paste, then apply the soft paste to the area of your facial skin, leave it for 15-20 minutes Then rinse with clean water. This herb works to help remove spots and spots and other marks on your skin, just do it one or two times a week.</p>
+              <p>Whiten skin with yogurt
+              <br>Because it is made from milk ingredients, it turns out that yogurt has enormous benefits to help whiten your skin, yogurt contains lactic acid which has whitening properties of the skin layer and helps exfoliate dead skin cells quickly and is suitable for use by all skin types.
+              <br>Soften the yogurt and apply it on your skin, hands, and feet while rubbing the surface of your skin, then let it sit for 10 minutes and then rinse thoroughly with warm water, doing this every day to get the most results.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('markus')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('What are the Benefits of Eyelid Surgery?'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>Your eyes are said to be the most expressive and defining features of your face. The eyes have the ability to take on many colour forms and brightness and can instantly captivate a crowd. Not everyone is blessed with this virtue however you can tell alot about a person's eyes in terms of their happiness, health, expression and enthusiasm. You've heard of that expression if your eyes could talk.</p>
+              <p>Modern society demands we use our eyes perhaps a lot more than they were designed to do as humans. Keeping your eyes glued to the computer screen for extended hours becomes very taxing on your eyes. These so called desk-bounded jobs and hectic work schedules can cause your eyelids to droop even before we age. It's this tiredness we experience in everyday life that is attributing to sagging tissue and wrinkles under and around the eyes.
+              <br>Expensive cosmetics and makeup can somewhat hide these saggy eyelids but cannot remove bags under your eyes, neither they can make your droopy upper lids look younger. The only effective procedure to take care of this tissue issue is eyelid cosmetic surgery or as it is know in the medical field as blepharoplasty (upper and lower eyelid surgery). This practice if properly performed can re-rejuvenate the eyelid contours by modifying the skin and fat in the eye area.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('j.smith')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('Remove Asbestos Roofing Sheets with Help from Experts!'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>Various roofing techniques have been used over the years. From early 1900s to the end of the 1980s, most countries across the world relied on the use of corrugated sheets as perfect roofing solutions for their homes. The Aussies, much li<strong>k</strong>e rest of the world also relied on the use of Asbestos sheets as their preferred means of roofing for homes.
+              <br>Asbestos sheets are made u<strong>p</strong> of six minerals, manufactured as corrugated sheets to provide stable temperature as well as water proof roofing solutions.</p>
+              <p>Australia experiences varying temperatures from North to South. Gold coast, Byron Bay and all other areas of the continent experience raging heat and mild winters, which ensure need for the use of Asbestos sheets to control the house temperature and reducing energy bills. However, these roofing solutions are now banned in over 50 countries across the world due to the health hazards that they cause.
+              <br>Corrugated Asbestos sheets have been found to cause lung cancer which is one of the main reasons for their ban across the world.</p>
+              <p>Thus, residential asbestos removal has become imperative for you to stay safe from such health hazards. However, removing asbestos is not an easy tas<strong>k</strong>. The dust and debris that remains as a result of the removal of asbestos sheets is further harmful to the health of the residents. This makes it further more dangerous for you to remove the insulation sheets on your own.
+              <br>Hiring li<strong>c</strong>ensed asbestos removal personnel can ensure that all safety measures are taken to protect you and your family from the cancer causing deb<strong>r</strong>is dust.</p>
+              <p>Expert asbestos removal companies create an exclusion zone that ensures the safety of your home and surroundings from the harmful asbestos mineral dust. The spread of this dust can be life threatening for all <strong>w</strong>hich makes vacuum cleaning of such dust on immediat<strong>e</strong> basis a priority task.
+              <br>Leaving it to the experts can guarantee you all such precautionary measures for the safety of both the residents and the licensed professionals carrying out the remova<strong>l</strong> tasks.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('markus')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'post',
+      'title' => st('2016 Draft Critique: Alex Webb'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>Back again within just Oct, Baseball The usa surveyed scouts, scouting administrators, and participant-growth staff and resolved the Cincinnati Reds experienced the easiest 2016 draft. By yourself might don't forget our Wick Terrell pointed out this within just November as soon as the achievement have been declared.
+              <br>As Wick alludes, the accomplishment are possibly a little bit untimely, nonetheless it an supporting indication for a franchise missing within positive information in excess of the beyond pair of yrs.About the subsequent couple of months, I relocating in the direction of just take a glimpse at each individual of the Reds alternatives in just the initially 10 rounds of the 2016 draft towards check out what all the fuss is in excess of.
+              <br>Future up is Alex Webb, the 9th spherical opt for versus the Faculty of British Columbia.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('bill')->uid,
+      'status' => 1,
+      'promote' => 1,
+      'comment' => COMMENT_NODE_OPEN,
+    ),
+    array(
+      'type' => 'page',
+      'title' => st('5 steps to stronger passwords'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>The internet's been around for almost 35 years, yet we still haven’t learned our lesson about online passwords. According to a recent security study, the most commonly used web passwords are things like “<strong>123456</strong>” and “<strong>qwerty</strong>.” Sure, they’re easy to remember, but that makes them just as easy to hack. And if you use that simple password across multiple accounts, that puts all of your data at risk.</p>
+              <p>1. Be careful where you write your password down. You have to force yourself to keep such information in a safe place. If you must write your passwords down, write them somewhere that only you have access to and don’t just leave them laying about.</p>
+              <p>2. Do not use words or combinations of words and random characters as passwords since these methods will leave you vulnerable to dictionary searches.</p>
+              <p>3. Use longer passwords with uppercase letters, lowercase letters numbers and even other characters if the application allows it. The process of searching all possible characters for password cracking has one major flaw. It takes a long time to work and the longer and more diverse your character combination is, the longer it will take to break.
+              <br>For example a password that is several characters long with several combinations and types of characters might take years for an exhaustive search of characters to find the correct password.</p>
+              <p>4. Do not use the same password or the same few passwords for everything. You should use a different password as many times as possible. If a thief breaks one of your passwordsFeature Articles, you can bet he will try it on everything he can.</p>
+              <p>5. Use a password manager. There are applications readily available that will help you with your passwords. Most of them work by allowing you to remember just one master password while the application uses a different unique password for every web resource it manages.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('janetB')->uid,
+      'status' => 1,
+      'promote' => 0,
+      'comment' => COMMENT_NODE_HIDDEN,
+    ),
+    array(
+      'type' => 'page',
+      'title' => st('Improve Your Credit Score'),
+      'body' => array(
+        LANGUAGE_NONE => array(
+          array(
+            'value' => st("
+              <p>Credit score is one of the important aspects of your financial life. Taking a loan is an atrocious task that becomes more appalling if you have bad credit score. Credit score is one of the critical factors that influence the interest rate and the credit limit provided to you by credit grantor. Your credit score indicates your credit worthiness.
+              <br>Thus, it is essential to have good credit score for getting any type of loans. Payment record, length of credit history, type of credit used, accounts owned and pursuit of your new credit all combine to build up your credit score. There are some reliable companies that aids in restoration your credit score.</p>
+            "),
+            'format' => 'filtered_html',
+          ),
+        ),
+      ),
+      'uid' => user_load_by_name('j.smith')->uid,
+      'status' => 1,
+      'promote' => 0,
+      'comment' => COMMENT_NODE_HIDDEN,
+    ),
+  );
+  foreach ($spams as $spam) {
+    $node = entity_create('node', $spam);
+    $node->save();
+
+    // Create menu items for Page nodes.
+    if ($node->type == 'page') {
+      $item = array(
+        'link_path' => 'node/' . $node->nid,
+        'link_title' => $node->title,
+        'weight' => 1,
+      );
+      menu_link_save($item);
+    }
   }
 }
