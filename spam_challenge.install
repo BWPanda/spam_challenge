@@ -454,6 +454,15 @@ function spam_challenge_install() {
   config_set('system.core', 'preprocess_js', '1');
   config_set('system.core', 'cache', '1');
 
+  // Get config.
+  $config = config('spam_challenge.config');
+
+  // Set our own default theme.
+  $default_theme = 'spam_challenge_theme';
+  config_set('system.core', 'theme_default', $default_theme);
+  theme_enable(array($default_theme));
+  theme_disable(array('basis'));
+
   // Create an Admin user account.
   $admin = entity_create('user', array(
     'name' => 'admin',
@@ -514,7 +523,13 @@ function spam_challenge_install() {
     ),
   );
   foreach ($spammers as $spammer) {
-    entity_create('user', $spammer)->save();
+    $user = entity_create('user', $spammer);
+    $user->save();
+
+    // Keep record of spam users.
+    $spam_users = $config->get('spam.users');
+    $spam_users[] = $user->uid;
+    $config->set('spam.users', $spam_users);
   }
 
   // Create spam content.
@@ -745,8 +760,6 @@ function spam_challenge_install() {
       ),
       'uid' => user_load_by_name('janetB')->uid,
       'status' => 1,
-      'promote' => 0,
-      'comment' => COMMENT_NODE_HIDDEN,
     ),
     array(
       'type' => 'page',
@@ -764,8 +777,6 @@ function spam_challenge_install() {
       ),
       'uid' => user_load_by_name('j.smith')->uid,
       'status' => 1,
-      'promote' => 0,
-      'comment' => COMMENT_NODE_HIDDEN,
     ),
   );
   foreach ($spams as $spam) {
@@ -781,5 +792,51 @@ function spam_challenge_install() {
       );
       menu_link_save($item);
     }
+
+    // Keep record of spam nodes.
+    $spam_nodes = $config->get('spam.nodes');
+    $spam_nodes[] = $node->nid;
+    $config->set('spam.nodes', $spam_nodes);
   }
+
+  // Create legitimate content.
+  $node = entity_create('node', array(
+    'type' => 'page',
+    'title' => st('Testing Backdrop editing experience'),
+    'body' => array(
+      LANGUAGE_NONE => array(
+        array(
+          'value' => st("
+            <p>Just testing the Backdrop editing experience. Seems easy enough so far.</p>
+            <p class=\"text-align-center\">I can do <em>italic text</em> which is centered.</p>
+            <h3>Here's a heading</h3>
+            <p>Nice! I'm liking Backdrop!</p>
+          "),
+          'format' => 'filtered_html',
+        ),
+      ),
+    ),
+    'uid' => user_load_by_name('bjackson')->uid,
+    'status' => 0,
+  ));
+  $node->save();
+
+  // Add extra permissions.
+  user_role_grant_permissions('authenticated', array(
+    'access administration bar',
+    'access content overview',
+    'view own unpublished content',
+    'view any unpublished content',
+    'access administration pages',
+    'view the administration theme',
+  ));
+  user_role_grant_permissions('editor', array(
+    'administer site configuration',
+  ));
+
+  // Generate a random key to avoid cheating ;)
+  $config->set('key', backdrop_random_key(8));
+
+  // Save config.
+  $config->save();
 }

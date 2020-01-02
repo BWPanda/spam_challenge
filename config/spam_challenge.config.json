@@ -1,0 +1,8 @@
+{
+    "_config_name": "spam_challenge",
+    "key": "",
+    "spam": {
+        "users": [],
+        "nodes": []
+    }
+}

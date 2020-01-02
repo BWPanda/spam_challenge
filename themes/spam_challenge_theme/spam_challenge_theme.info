@@ -1,0 +1,6 @@
+name = Spam Challenge
+description = Theme customisations for the Spam Challenge install profile.
+type = theme
+backdrop = 1.x
+base theme = basis
+stylesheets[all][] = css/spam_challenge_theme.css
