@@ -51,6 +51,10 @@ function spam_challenge_menu() {
  * The Congratulations! page.
  */
 function spam_challenge_congrats() {
+  // Hide messages so page doesn't get pushed down (can happen when
+  // bulk-deleting users).
+  unset($_SESSION['messages']);
+
   $markup = '';
   $markup .= '<div class="spam-challenge-congrats">';
   $markup .= t('<h3>You successfully completed the Backdrop Spam Challenge!</h3>');
@@ -74,6 +78,18 @@ function spam_challenge_form_user_login_alter(&$form, &$form_state, $form_id) {
   if ($key && $key == substr(config_get('spam_challenge.config', 'key'), 0, 5)) {
     backdrop_add_js(backdrop_get_path('profile', 'spam_challenge') . '/js/spam_challenge_login.js');
     $form['name']['#default_value'] = 'admin';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_form_node_admin_content_page.
+ */
+function spam_challenge_form_views_form_node_admin_content_page_alter(&$form, &$form_state, $form_id) {
+  // Deny access to bulk form for anyone without the 'administer nodes'
+  // permission.
+  if (!user_access('administer nodes')) {
+    $form['bulk_form']['#access'] = FALSE;
+    $form['header']['bulk_form']['#access'] = FALSE;
   }
 }
 

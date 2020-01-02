@@ -831,6 +831,7 @@ function spam_challenge_install() {
     'view the administration theme',
   ));
   user_role_grant_permissions('editor', array(
+    'administer nodes',
     'administer site configuration',
   ));
 
