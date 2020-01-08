@@ -23,11 +23,10 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/backdrop" "${DOCROOT}"
 
         # Setup install profile.
-        - cp -rp "${TUGBOAT_ROOT}/spam_challenge" "${DOCROOT}/profiles/"
+        - ln -snf "${TUGBOAT_ROOT}/spam_challenge" "${DOCROOT}/profiles/spam_challenge"
 
         # Install Backdrop.
-        - drush -r "${DOCROOT}" site-install --db-url="mysql://tugboat:tugboat@mariadb/tugboat" -y
-        - drush -r "${DOCROOT}" user-password admin --password=d8b4uTTk6Mu7DBz7fe4B2u5G7DrQD1
+        - drush -r "${DOCROOT}" site-install spam_challenge --db-url="mysql://tugboat:tugboat@mariadb/tugboat" --account-pass=d8b4uTTk6Mu7DBz7fe4B2u5G7DrQD1 -y
 
         # Set file permissions.
         - mkdir -p "${DOCROOT}/files"
