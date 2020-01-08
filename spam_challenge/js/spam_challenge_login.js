@@ -8,7 +8,7 @@
 Backdrop.behaviors.spamChallengeLogin = {
   attach: function(context, settings) {
 
-    $('#edit-pass').val('Ct4-R8Gv9G$r3~E+p1v*');
+    $('#edit-pass').val('d8b4uTTk6Mu7DBz7fe4B2u5G7DrQD1');
 
   }
 };
