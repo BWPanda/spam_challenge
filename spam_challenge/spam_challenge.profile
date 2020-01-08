@@ -70,12 +70,10 @@ function spam_challenge_congrats() {
  * Implements hook_form_FORM_ID_alter() for user_login.
  */
 function spam_challenge_form_user_login_alter(&$form, &$form_state, $form_id) {
-  $key = $_GET['key'];
-
   // If the correct key is present, autofill the username & password.
   // The password must be filled via JS as there's no Form API way to do this
   // for Password fields.
-  if ($key && $key == substr(config_get('spam_challenge.config', 'key'), 0, 5)) {
+  if (!empty($_GET['key']) && $_GET['key'] == substr(config_get('spam_challenge.config', 'key'), 0, 5)) {
     backdrop_add_js(backdrop_get_path('profile', 'spam_challenge') . '/js/spam_challenge_login.js');
     $form['name']['#default_value'] = 'admin';
   }
