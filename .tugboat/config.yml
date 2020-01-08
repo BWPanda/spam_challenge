@@ -23,6 +23,7 @@ services:
         - ln -snf "${TUGBOAT_ROOT}/backdrop" "${DOCROOT}"
 
         # Setup install profile.
+        - mkdir "${DOCROOT}/profiles"
         - ln -snf "${TUGBOAT_ROOT}/spam_challenge" "${DOCROOT}/profiles/spam_challenge"
 
         # Install Backdrop.
