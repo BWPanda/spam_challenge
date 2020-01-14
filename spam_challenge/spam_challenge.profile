@@ -59,7 +59,7 @@ function spam_challenge_congrats() {
   $markup .= '<div class="spam-challenge-congrats">';
   $markup .= t('<h3>You successfully completed the Backdrop Spam Challenge!</h3>');
   $markup .= '<img src="' . base_path() . backdrop_get_path('profile', 'spam_challenge') . '/images/medal.png">';
-  $markup .= t("<p>If you'd like to share your success on social media, feel free to use the above image and put a link to <a href=\"https://panda.id.au\">LINK</a> so others can try the challenge too.</p>");
+  $markup .= t("<p>If you'd like to share your success on social media, feel free to use the above image and put a link to <a href=\"https://panda.id.au/backdrop-challenge\">panda.id.au/backdrop-challenge</a> so others can try the challenge too.</p>");
   $markup .= '<p><small>Original gold medal image made by <a href="https://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>.</small></p>';
   $markup .= '</div>';
 
