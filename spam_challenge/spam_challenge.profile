@@ -92,6 +92,13 @@ function spam_challenge_form_views_form_node_admin_content_page_alter(&$form, &$
 }
 
 /**
+ * Implements hook_form_FORM_ID_alter() for system_site_maintenance_mode.
+ */
+function spam_challenge_form_system_site_maintenance_mode_alter(&$form, &$form_state, $form_id) {
+  $form['#submit'][] = 'system_clear_page_cache_submit';
+}
+
+/**
  * Implements hook_node_delete().
  */
 function spam_challenge_node_delete(Node $node) {
