@@ -463,17 +463,17 @@ function spam_challenge_install() {
   theme_enable(array($default_theme));
   theme_disable(array('basis'));
 
-  // Create an Admin user account.
-  // NOTE: This now happens during site install as User 1.
-  // @see `.tugboat/config.yml`
-  // $admin = entity_create('user', array(
-  //   'name' => 'admin',
-  //   'mail' => 'admin@example.com',
-  //   'pass' => 'd8b4uTTk6Mu7DBz7fe4B2u5G7DrQD1',
-  //   'roles' => array('administrator'),
-  //   'status' => 1,
-  // ));
-  // $admin->save();
+  // Create an Admin user account (if not already created via Tugboat config).
+  if (!user_load_by_name('admin')) {
+    $admin = entity_create('user', array(
+      'name' => 'admin',
+      'mail' => 'admin@example.com',
+      'pass' => 'd8b4uTTk6Mu7DBz7fe4B2u5G7DrQD1',
+      'roles' => array('administrator'),
+      'status' => 1,
+    ));
+    $admin->save();
+  }
 
   // Create an Editor user account.
   $editor = entity_create('user', array(
