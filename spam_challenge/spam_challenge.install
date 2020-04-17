@@ -13,6 +13,10 @@
  * @see system_install()
  */
 function spam_challenge_install() {
+  // Run the standard install profile first, so we can build upon it below.
+  require_once BACKDROP_ROOT . '/profiles/standard/standard.install';
+  standard_install();
+
   // Get config.
   $config = config('spam_challenge.config');
 

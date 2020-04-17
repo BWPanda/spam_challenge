@@ -2,4 +2,3 @@ name = Spam Challenge
 description = Backdrop challenge: Delete all the spam!
 backdrop = 1.x
 type = profile
-base = standard
