@@ -14,7 +14,7 @@
  */
 function spam_challenge_install() {
   // Run the standard install profile first, so we can build upon it below.
-  require_once BACKDROP_ROOT . '/profiles/standard/standard.install';
+  require_once BACKDROP_ROOT . '/core/profiles/standard/standard.install';
   standard_install();
 
   // Get config.
