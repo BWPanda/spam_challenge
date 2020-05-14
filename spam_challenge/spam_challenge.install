@@ -27,6 +27,7 @@ function spam_challenge_install() {
   theme_disable(array('basis'));
 
   // Create an Admin user account (if not already created via Tugboat config).
+  print_r(entity_load_multiple('user'));
   if (!user_load_by_name('admin')) {
     $admin = entity_create('user', array(
       'name' => 'admin',
